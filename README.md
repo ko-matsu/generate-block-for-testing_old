@@ -55,6 +55,20 @@ Options:
 
 If both environment variable and command-line argument are set, the value set for command-line argument will take precedence.
 
+### example
+
+bitcoin:
+
+```sh
+generateblock -l --host localhost:18443 --rpcuserid bitcoinrpc --rpcpassword password -n regtest -a bcrt1qpaujknvwumkwplvpdlh6gtsv7hrl60a37fc9tx
+```
+
+liquid network:
+
+```sh
+generateblock -l --host localhost:18447 --rpcuserid elementsrpc --rpcpassword password -n elementsregtest -s 5121024241bff4d20f2e616bef2f6e5c25145c068d45a78da3ddba433b3101bbe9a37d51ae -p 02b6991705d4b343ba192c2d1b10e7b8785202f51679f26a1f2cdbe9c069f8dceb024fb0908ea9263bedb5327da23ff914ce1883f851337d71b3ca09b32701003d05 -p 030e07d4f657c0c169e04fac5d5a8096adb099874834be59ad1e681e22d952ccda0214156e4ae9168289b4d0c034da94025121d33ad8643663454885032d77640e3d
+```
+
 ## build
 
 ```go
