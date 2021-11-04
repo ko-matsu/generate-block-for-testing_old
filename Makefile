@@ -6,7 +6,6 @@ all: gettools generate format build
 
 gettools:
 	go install golang.org/x/tools/cmd/goimports@v0.1.5
-	go mod tidy
 
 generate:
 	go generate ./...
@@ -20,3 +19,6 @@ download:
 
 build: download
 	go build ./cmd/generateblock/
+
+build-release: download
+	go build -ldflags "-s -w" ./cmd/generateblock/

@@ -1,6 +1,6 @@
 # generate-block-for-testing
 
-This application use for the generating block on the testing bitcoin or liquid network.
+This application is used to perform block generation in a testing network for the bitcoin or the liquid network.
 
 ## function
 
@@ -17,7 +17,7 @@ This application use for the generating block on the testing bitcoin or liquid n
 
 ## usage
 
-### argument
+### command-line argument
 
 ```sh
 Usage: generateblock.exe [--host HOST] [--fedpegscript FEDPEGSCRIPT] [--pak PAK] [--network NETWORK] [--address ADDRESS] [--rpcuserid RPCUSERID] [--rpcpassword RPCPASSWORD] [--logging]
@@ -39,7 +39,7 @@ Options:
   --help, -h             display this help and exit
 ```
 
-### environment
+### environment variable
 
 - GENERATE_BLOCK_CONNECTION_HOST: host & port.
 - GENERATE_BLOCK_CONNECTION_NETWORK: network type.
@@ -53,7 +53,7 @@ Options:
   - DYNAFED_FEDPEG_SCRIPT: fedpeg script.
   - DYNAFED_PAK: pak entry. To set multiple items, separate them with commas.
 
-If both environment and argument are set, the value set for argument will take precedence.
+If both environment variable and command-line argument are set, the value set for command-line argument will take precedence.
 
 ## build
 
