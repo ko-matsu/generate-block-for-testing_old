@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  alpine-3.14:
+    build:
+      context: .
+      dockerfile: ./docker/alpine3_14.dockerfile
+    volumes:
+      - .:/workspace
+    command: generateblock -h
+
+  debian-10:
+    build:
+      context: .
+      dockerfile: ./docker/debian10.dockerfile
+    volumes:
+      - .:/workspace
+    command: generateblock -h
+
+  debian-11:
+    build:
+      context: .
+      dockerfile: ./docker/debian11.dockerfile
+    volumes:
+      - .:/workspace
+    command: generateblock -h
