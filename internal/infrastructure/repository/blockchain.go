@@ -39,7 +39,7 @@ func (b *blockchainRpc) GetNewBlockHex(
 	}
 	result, _, err := b.post(ctx, "getnewblockhex", minimumTxAge, dynafedData)
 	if err != nil {
-		return "", errors.Wrap(err, "Error while accessing blockchain")
+		return "", err
 	}
 	blockHex = result.(string)
 	return blockHex, nil
@@ -50,10 +50,7 @@ func (b *blockchainRpc) SubmitBlock(
 	blockHex string,
 ) error {
 	_, _, err := b.post(ctx, "submitblock", blockHex)
-	if err != nil {
-		return errors.Wrap(err, "Error while accessing blockchain")
-	}
-	return nil
+	return err
 }
 
 func (b *blockchainRpc) GenerateToAddress(
@@ -63,7 +60,7 @@ func (b *blockchainRpc) GenerateToAddress(
 ) (blockHashes []string, err error) {
 	result, _, err := b.post(ctx, "generatetoaddress", int64(blockCount), address)
 	if err != nil {
-		return nil, errors.Wrap(err, "Error while accessing blockchain")
+		return nil, err
 	}
 
 	workBlockHashes := result.([]interface{})

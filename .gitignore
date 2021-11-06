@@ -16,3 +16,5 @@
 
 generateblock.exe
 generateblock
+/tests/bitcoind_datadir
+/tests/elementsd_datadir
